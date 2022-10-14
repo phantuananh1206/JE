@@ -17,10 +17,13 @@ const redisUtils = require('./shared/helpers/redisUtils.helper');
 // redis
 redisUtils.init();
 
-const port = process.env.PORT || 8074;
+const port = process.env.PORT || 8679;
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
+
+const routerIndex = require('./routes')(app);
+routerIndex.registerRoutes();
 
 /**
 * =====================
