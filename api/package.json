@@ -41,6 +41,7 @@
         "nodemailer-ses-transport": "^1.5.1",
         "nodemailer-smtp-transport": "^2.7.4",
         "office-converter": "^1.0.2",
+        "pg": "^8.8.0",
         "redis": "^3.0.2",
         "sequelize": "^5.21.2",
         "stripe": "^8.183.0",

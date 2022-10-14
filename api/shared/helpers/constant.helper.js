@@ -5,7 +5,7 @@ module.exports = Object.freeze({
         TIME_EXP_CHECK_CONFRIM: '0 */1 * * * *'
     },
     HEADER: {
-        LOCALE_DEFAULT: 'ja',
+        LOCALE_DEFAULT: 'en',
         LOCALE_HEADER: 'locale',
         AUTH: 'auth',
         TOKEN: 'token',

@@ -11,7 +11,7 @@ module.exports = Object.freeze({
         secretAccessKey: '',
         emailReceive: ''
     },
-    locales: ['en', 'ja'],
+    locales: ['en'],
     db: {
         recreateDB: false,
         database: 'je',
