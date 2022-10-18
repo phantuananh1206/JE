@@ -39,6 +39,29 @@ function Header() {
                     </div>
                 </div>
             </div>
+            <div className={cx('container-nav')}>
+                <nav className={cx('navbar')}>
+                    <a href="index.html" className={cx('navbar-brand')}>
+                        <h1 className={cx('text-primary')}><span className={cx('text-dark')}>JE</span> Ecommerce</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div className={cx('navbar-collapse')}>
+                        <div className={cx('navbar-nav')}>
+                            <a href="index.html" className={cx('nav-link', 'nav-link-active')}>Home</a>
+                            <a href="about.html" className={cx('nav-link')}>About</a>
+                            <a href="service.html" className={cx('nav-link')}>Services</a>
+                            <a href="price.html" className={cx('nav-link')}>Pricing</a>
+                            <a href="#" className={cx('nav-link')} data-toggle="dropdown">Pages</a>
+                            <a href="contact.html" className={cx('nav-link')}>Contact</a>
+                        </div>
+                        <a href="" className={cx('auth-user')}>Sign up</a>
+                        <small className={cx('px-3')}>|</small>
+                        <a href="" className={cx('auth-user')}>Sign in</a>
+                    </div>
+                </nav>
+            </div>
         </header >
     );
 }

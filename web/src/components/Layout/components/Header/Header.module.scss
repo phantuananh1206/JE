@@ -1,9 +1,10 @@
 :root {
 }
 
+// Contact infor
 .infor {
     width: 100%;
-    background-color: #f3bab3;
+    background-color: #f7e5e2;
     font-weight: 400;
     padding-left: 0.5rem;
 }
@@ -27,16 +28,14 @@
 }
 
 .social {
-    color: #f5765d;
+    color: #f9a392;
     font-weight: bold;
     text-decoration: none;
     background-color: transparent;
 }
 
-.nav-bar {
-    width: 100%;
-    height: 50px;
-    background-color: red !important;
+.social:hover {
+    color: #f56649;
 }
 
 .center {
@@ -56,4 +55,78 @@
 
 .mr-2 {
     margin-right: 0.5rem;
+}
+
+// Navbar
+.container-nav {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar {
+    display: flex;
+    padding: 0 3rem;
+    align-items: center;
+    flex-direction: row;
+}
+
+.navbar-collapse {
+    display: flex;
+    flex-basis: auto;
+    justify-content: space-between;
+    padding: 0 1rem;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: auto;
+}
+
+.nav-link {
+    padding: 30px 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    color: #211e1c;
+}
+
+.nav-link-active {
+    color: #f9a392;
+}
+
+.nav-link:hover,
+.auth-user:hover {
+    color: #f9a392;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.text-dark {
+    color: #211e1c;
+}
+
+.text-primary {
+    color: #f9a392;
+}
+
+.auth-user {
+    text-decoration: none;
+    color: #211e1c;
+    font-weight: 600;
 }
