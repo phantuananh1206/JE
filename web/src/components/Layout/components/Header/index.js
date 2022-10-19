@@ -58,7 +58,7 @@ function Header() {
                         </div>
                         <a href="" className={cx('auth-user')}>Sign up</a>
                         <small className={cx('px-3')}>|</small>
-                        <a href="" className={cx('auth-user')}>Sign in</a>
+                        <a href="/login" className={cx('auth-user')}>Sign in</a>
                     </div>
                 </nav>
             </div>
