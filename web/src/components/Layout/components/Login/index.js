@@ -14,9 +14,9 @@ function Login() {
                     <span className={cx('login-form-title')}>
                         Login
                     </span>
-                    <div className={cx('wrap-input', 'username')} data-validate="Username is reauired">
-                        <span className={cx('label-input')}>Username</span>
-                        <input className={cx('input-account')} type="text" name="username" placeholder="Type your username" />
+                    <div className={cx('wrap-input', 'email')} data-validate="Email is reauired">
+                        <span className={cx('label-input')}>Email</span>
+                        <input className={cx('input-account')} type="text" name="email" placeholder="Type your email" />
                         <span className="focus-input100" data-symbol="" />
                     </div>
                     <div className={cx('wrap-input')} data-validate="Password is required">
