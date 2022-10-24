@@ -56,7 +56,7 @@ function Header() {
                             <a href="#" className={cx('nav-link')} data-toggle="dropdown">Pages</a>
                             <a href="contact.html" className={cx('nav-link')}>Contact</a>
                         </div>
-                        <a href="" className={cx('auth-user')}>Sign up</a>
+                        <a href="/register" className={cx('auth-user')}>Sign up</a>
                         <small className={cx('px-3')}>|</small>
                         <a href="/login" className={cx('auth-user')}>Sign in</a>
                     </div>
