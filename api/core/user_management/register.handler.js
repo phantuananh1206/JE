@@ -3,8 +3,7 @@ const moment = require('moment');
 const { TABLE, FIELD_NAME, USER } = require('../../shared/helpers/constant.helper');
 const localesUtils = require('../../shared/helpers/localesUtils.helper');
 const formatEmail = require('../../shared/helpers/formatEmail.helper')
-const baseCommon = require('../../shared/helpers/baseCommon.helper')
-const { models, sequelize } = require('../../shared/models/db');
+const { models } = require('../../shared/models/db');
 const encodeDecode = require('../../shared/security/encode_decode')
 
 const register = async (body, locals) => {
@@ -15,9 +14,9 @@ const register = async (body, locals) => {
     if (user) {
         throw new Error(localesUtils.userMessage(lang).REGISTER.ACCOUNT_WAS_REGISTER_BEFORE)
     }
-    const salt = await bcrypt.genSaltSync(10);
+    const salt = bcrypt.genSaltSync(10);
     body[FIELD_NAME.SALT] = salt;
-    const password = await bcrypt.hashSync(body[FIELD_NAME.PASSWORD], 10);
+    const password = bcrypt.hashSync(body[FIELD_NAME.PASSWORD], salt);
     body[FIELD_NAME.PASSWORD] = password;
     body[FIELD_NAME.ACTIVATION_CODE] = encodeDecode.encode(body[FIELD_NAME.EMAIL]);
     body[FIELD_NAME.ACTIVATION_EXPIRE] = moment().add(3, 'd').valueOf();
