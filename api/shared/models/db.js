@@ -27,7 +27,7 @@ function connect() {
 
 // merge the properties from models into this Db object
 function initModels() {
-
+    models[TABLE.USER] = sequelize.import('./user');
 
     Object.values(models)
         .filter(model => typeof model.associate === 'function')

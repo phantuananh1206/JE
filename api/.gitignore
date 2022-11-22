@@ -41,5 +41,3 @@ uploads
 config/production.js
 test.js
 package-lock.json
-
-development.js

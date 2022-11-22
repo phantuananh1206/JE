@@ -9,7 +9,7 @@ module.exports = Object.freeze({
         LOCALE_HEADER: 'locale',
         AUTH: 'auth',
         TOKEN: 'token',
-        LOCALE_ENGLISH: 'en',
+        LOCALE_VIETNAM: 'vi',
         AUTH_TOKEN_SECRET: 'auth_token_secret',
         TOKEN_ID: 'token_id',
         DEVICE_ID: 'device_id',
@@ -29,8 +29,29 @@ module.exports = Object.freeze({
         TEXT: 'text'
     },
     TABLE: {
+        USER: 'users'
     },
     FIELD_NAME: {
+        ID: 'id',
+        FULL_NAME: 'full_name',
+        EMAIL: 'email',
+        PHONE_NUMBER: 'phone_number',
+        PASSWORD: 'password',
+        IMAGE: 'image',
+        COIN: 'coin',
+        ROLE: 'role',
+        STATUS: 'status',
+        DEL_FLAG: 'del_flag',
+        SEX: 'sex',
+        BIRTHDAY: 'birthday',
+        SALT: 'salt',
+        SECRET_KEY: 'secretKey',
+        CREATE_DATE_TSP: 'create_date_timestamp',
+        UPDATE_DATE_TSP: 'update_date_timestamp',
+        CREATE_DATE: 'create_date',
+        UPDATE_DATE: 'update_date',
+        ACTIVATION_CODE: 'activation_code',
+        ACTIVATION_EXPIRE: 'activation_expire',
     },
     DATABASE_DEFAULT: {
         START_DATE: '2022-10-01',
@@ -46,6 +67,10 @@ module.exports = Object.freeze({
     OAUTH: {
     },
     USER: {
+        STATUS: {
+            NEW: 1,
+            ACTIVE: 2,
+        }
     },
     ORDER: {
         ASC: 'ASC',

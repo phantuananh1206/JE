@@ -12,7 +12,7 @@ const sendEmail = async (subject, body, email, lang = appConstant.HEADER.LOCALE_
             <br>
             ${localeUtils.mailMessage(lang).FOOTER.QUESTION}
             <br>
-            ${localeUtils.mailMessage(lang).FOOTER.FILESTAR_INC}
+            ${localeUtils.mailMessage(lang).FOOTER.JE_INC}
         </div>
     </section>
     `

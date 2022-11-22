@@ -35,13 +35,16 @@ class ConfigCommon {
         return this.getConfig().jwt.key;
     }
 
-
     getLanguageSupport() {
         return this.getConfig().locales
     }
 
     getRedisConfig() {
         return this.getConfig().redis;
+    }
+
+    getEncodeDecode() {
+        return this.getConfig().encode_decode;
     }
 
 }
