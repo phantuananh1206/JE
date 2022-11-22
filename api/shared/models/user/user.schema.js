@@ -46,6 +46,10 @@ function getSchema(DataTypes) {
         [FIELD_NAME.COIN]: {
             type: DataTypes.DOUBLE,
         },
+        [FIELD_NAME.ROLE]: {
+            type: DataTypes.INTEGER(2),
+            defaultValue: USER.ROLE.NORMAL
+        },
         [FIELD_NAME.STATUS]: {
             type: DataTypes.INTEGER(2),
             defaultValue: USER.STATUS.NEW

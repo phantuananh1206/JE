@@ -29,7 +29,8 @@ module.exports = Object.freeze({
         TEXT: 'text'
     },
     TABLE: {
-        USER: 'users'
+        USER: 'users',
+        TOKEN: 'tokens'
     },
     FIELD_NAME: {
         ID: 'id',
@@ -52,6 +53,8 @@ module.exports = Object.freeze({
         UPDATE_DATE: 'update_date',
         ACTIVATION_CODE: 'activation_code',
         ACTIVATION_EXPIRE: 'activation_expire',
+        TOKEN: 'token',
+        USER_ID: 'user_id'
     },
     DATABASE_DEFAULT: {
         START_DATE: '2022-10-01',
@@ -70,6 +73,10 @@ module.exports = Object.freeze({
         STATUS: {
             NEW: 1,
             ACTIVE: 2,
+        },
+        ROLE: {
+            NORMAL: 1,
+            ADMIN: 2
         }
     },
     ORDER: {
