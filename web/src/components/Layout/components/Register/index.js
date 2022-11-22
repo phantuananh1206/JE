@@ -5,7 +5,9 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faFacebookF, faInstagram, faLinkedinIn, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 const cx = classNames.bind(styles)
+const encodeDecode = require('../../../../security/encode_decode');
 
 function Register() {
     const initialValues = {
@@ -15,24 +17,48 @@ function Register() {
     };
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
+    const navigate = useNavigate();
+
+    async function signUp() {
+        formValues.email = encodeDecode.encode(formValues.email);
+        formValues.password = encodeDecode.encode(formValues.password);
+        formValues.passwordConfirm = encodeDecode.encode(formValues.passwordConfirm);
+        let result = await fetch('http://localhost:8679/register', {
+            method: 'POST',
+            body: JSON.stringify(formValues),
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+        const notification = await result.json()
+        alert(notification.message);
+        if (result.status == 200) {
+            navigate('/login')
+        }
+        // localStorage.setItem('user-infor', JSON.stringify(result))
+    }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        console.log(formValues);
     }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true)
+        if (Object.keys(formErrors).length === 0) {
+            signUp()
+            setFormValues(initialValues);
+        }
     }
 
     useEffect(() => {
-        console.log(formErrors);
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
+        setFormErrors(validate(formValues));
+    }, [formValues])
+
+    useEffect(() => {
+        if (Object.keys(formErrors).length === 0) {
         }
     }, [formErrors])
 
@@ -60,7 +86,6 @@ function Register() {
     return (
         <div className={cx('container-register')}>
             <div className={cx('wrap-register')}>
-                {Object.keys(formErrors).length === 0 && isSubmit ? alert('Signed in successfully') : ""}
                 <form className={cx('register-form')} onSubmit={handleSubmit}>
                     <span className={cx('register-form-title')}>
                         Sign up
@@ -86,7 +111,7 @@ function Register() {
                     <div className={cx('container-register-form-btn')}>
                         <div className={cx('wrap-register-form-btn')}>
                             <div className={cx('register-form-bgbtn')} />
-                            <button className={cx('register-form-btn')}>
+                            <button onClick={handleSubmit} className={cx('register-form-btn')}>
                                 Register
                             </button>
                         </div>
