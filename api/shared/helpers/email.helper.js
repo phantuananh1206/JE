@@ -23,7 +23,16 @@ const smtpConfig = {
 };
 
 const sendEmail = (subject, emailReceiver, cc, bcc, data, fromMail, lang = appConstant.LOCALE_DEFAULT, path) => {
-    const transporter = nodemailer.createTransport(sesTransport(smtpConfig));
+    // const transporter = nodemailer.createTransport(sesTransport(smtpConfig));
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        auth: {
+            user: 'phantuananhltt@gmail.com',
+            pass: 'kjulxrrgnajfpecj'
+        }
+    });
     // setup e-mail data with unicode symbols
     const name = fromMail ? `From ${fromMail}` : emailName;
     const mailOptions = {

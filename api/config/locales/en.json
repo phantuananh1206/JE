@@ -50,7 +50,10 @@
         },
         "VERIFY": {
             "VERIFIED": "Account is already verified.",
-            "ACTIVED_USER_SUCCESSFULLY": "User activated successfully."
+            "ACTIVATED_ACCOUNT_SUCCESSFULLY": "Account activated successfully.",
+            "ACTIVATION_EXPIRED": "Account activation has expired.",
+            "ACTIVATION_CODE_INVALID": "Activation code invalid.",
+            "RESEND_LINK_ACTIVE": "Account activation link has been sent, please check your email."
         },
         "FAVORITE": {
             "CREATE_FAVORITE_SUCCESSFULLY": "Add comment to favorite list successfully.",
@@ -76,9 +79,9 @@
             "CHANGE_PASSWORD": "Your password changed"
         },
         "FOOTER": {
-            "THANK_YOU": "Thank you for your continued support of Twitter.",
+            "THANK_YOU": "Thank you for your continued support of JE.",
             "QUESTION": "For other questions, please contact us from the inquiry form on the site.",
-            "FILESTAR_INC": "Twitter Systems Inc."
+            "JE_INC": "J.E Systems Inc."
         }
     },
     "ADMIN": {

@@ -2,10 +2,10 @@ const i18n = require('i18n');
 const { FIELD_NAME } = require('./constant.helper');
 const appConstant = require('./constant.helper')
 
-const ENGLISH = appConstant.HEADER.LOCALE_ENGLISH;
-const JAPAN = appConstant.HEADER.LOCALE_DEFAULT;
+const VIETNAM = appConstant.HEADER.LOCALE_VIETNAM;
+const ENGLISH = appConstant.HEADER.LOCALE_DEFAULT;
 
-const userMessage = (lang = JAPAN) => {
+const userMessage = (lang = ENGLISH) => {
     lang = checkLang(lang);
     const language = i18n.__({
         phrase: 'USER',
@@ -15,7 +15,7 @@ const userMessage = (lang = JAPAN) => {
 }
 
 
-const encodeMessage = (lang = JAPAN) => {
+const encodeMessage = (lang = ENGLISH) => {
     lang = checkLang(lang);
     const language = i18n.__({
         phrase: 'ENCODE_DECODE',
@@ -25,14 +25,14 @@ const encodeMessage = (lang = JAPAN) => {
 }
 /* * ***************************************** Function helper ************************************************ */
 
-function checkLang(lang = JAPAN) {
-    if (lang !== ENGLISH && lang !== JAPAN) {
-        lang = JAPAN;
+function checkLang(lang = ENGLISH) {
+    if (lang !== VIETNAM && lang !== ENGLISH) {
+        lang = ENGLISH;
     }
     return lang
 }
 
-function commonMessage(lang = JAPAN) {
+function commonMessage(lang = ENGLISH) {
     lang = checkLang(lang);
     const language = i18n.__({
         phrase: 'COMMON',
@@ -41,7 +41,7 @@ function commonMessage(lang = JAPAN) {
     return language;
 }
 
-function validateMessage(lang = JAPAN) {
+function validateMessage(lang = ENGLISH) {
     lang = checkLang(lang);
     const language = i18n.__({
         phrase: 'VALIDATE',
@@ -50,7 +50,7 @@ function validateMessage(lang = JAPAN) {
     return language;
 }
 
-function adminMessage(lang = JAPAN) {
+function adminMessage(lang = ENGLISH) {
     lang = checkLang(lang);
     const language = i18n.__({
         phrase: 'ADMIN',
@@ -59,7 +59,7 @@ function adminMessage(lang = JAPAN) {
     return language;
 }
 
-function mailMessage(lang = JAPAN) {
+function mailMessage(lang = ENGLISH) {
     lang = checkLang(lang);
     const language = i18n.__({
         phrase: 'MAIL',
@@ -68,23 +68,23 @@ function mailMessage(lang = JAPAN) {
     return language;
 }
 
-const adjustProductMessage = (productName, quantity, lang = JAPAN) => {
+const adjustProductMessage = (productName, quantity, lang = ENGLISH) => {
     let text = `At the present time, Products ${productName} can only buy ${quantity} products. Please readjust the quantity.`
-    if (lang === JAPAN) {
+    if (lang === ENGLISH) {
         text = `現時点では、Products ${productName}は${quantity}製品のみを購入できます。 数量を再調整してください。`
     }
     return text;
 }
 
-const outOfStoreMessage = (productName, lang = JAPAN) => {
+const outOfStoreMessage = (productName, lang = ENGLISH) => {
     let text = `Product ${productName} is out of stock. Please come back later`
-    if (lang === JAPAN) {
+    if (lang === ENGLISH) {
         text = ` 商品${productName}は在庫切れです。 商品が補充されるまでしばらくお待ちください。`
     }
     return text;
 }
 
-const paymentMessage = (lang = JAPAN) => {
+const paymentMessage = (lang = ENGLISH) => {
     lang = checkLang(lang);
     const language = i18n.__({
         phrase: 'PAYMENT',

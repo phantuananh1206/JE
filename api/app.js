@@ -12,10 +12,10 @@ const bodyParser = require('body-parser');
 const db = require('./shared/models/db');
 const configCommon = require('./shared/helpers/configCommon.helper')
 const generalErrorHandler = require('./shared/helpers/generalErrorHandler.helper');
-const redisUtils = require('./shared/helpers/redisUtils.helper');
+// const redisUtils = require('./shared/helpers/redisUtils.helper');
 
 // redis
-redisUtils.init();
+// redisUtils.init();
 
 const port = process.env.PORT || 8679;
 app.use(bodyParser.json({ limit: '50mb' }));
